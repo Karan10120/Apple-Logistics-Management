@@ -22,9 +22,7 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies
-        run: |
-          cd client-app
-          npm ci
+        run: npm ci
 
       - name: Run tests
         run: npm test
@@ -37,7 +35,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Install frontend dependencies
-        run: | 
+        run:  
           cd client-app
           npm install
           
