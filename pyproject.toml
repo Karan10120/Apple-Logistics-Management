@@ -1,0 +1,60 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools", "setuptools-scm"]
+
+[project]
+authors = [
+  {name = "AUTHOR_NAME", email = "AUTHOR_EMAIL@hpe.com"}
+]
+classifiers = [
+  "Intended Audience :: Developers",
+  "Operating System :: Linux",
+  "Natural Language :: English",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10"
+]
+dependencies = []
+description = "PROJECT_DESCRIPTION"
+keywords = []
+license = {file = "LICENSE"}
+maintainers = [
+  {name = "AUTHOR_NAME", email = "AUTHOR_EMAIL@hpe.com"}
+]
+name = "PROJECT_NAME"
+readme = "README.md"
+requires-python = ">=3.8"
+version = "0.0.0"
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "flake8",
+  "flake8-implicit-str-concat",
+  "isort",
+  "lint-diffs",
+  "pre-commit",
+  "pytest",
+  "yamllint"
+]
+
+[project.urls]
+repository = "https://github.hpe.com/GITHUB_REPO/"
+
+[tool.black]
+include = '\.pyi?$'
+line-length = 120
+target-version = ['py38', 'py39']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.yaml"]
+
+[tool.setuptools.packages.find]
+exclude = ["tests*"]
+namespaces = true
+where = ["lib"]
